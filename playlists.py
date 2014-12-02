@@ -7,6 +7,16 @@ from oauth2client.client import flow_from_clientsecrets
 from flask import Flask, render_template, request, session, url_for, redirect
 
 def get_oauth_flow():
+    # client_secrets.json should look like this:
+    # {
+    #   "web": {
+    #     "client_id": "...",
+    #     "client_secret": "...",
+    #     "redirect_uris": [],
+    #     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    #     "token_uri": "https://accounts.google.com/o/oauth2/token"
+    #   }
+    # }
     CLIENTSECRETS_LOCATION = 'client_secrets.json'
     REDIRECT_URI = url_for('oauth_callback', _external=True, _scheme='http')
 

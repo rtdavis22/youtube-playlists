@@ -42,7 +42,7 @@ def index():
 
         youtube = build_youtube(credentials)
 
-        return render_template('callback.html',
+        return render_template('index.html',
                                playlists=get_playlists(youtube))
 
     flow = get_oauth_flow()

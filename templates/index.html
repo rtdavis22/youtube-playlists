@@ -8,16 +8,21 @@
 <body>
  {% for playlist in playlists %}
   <h3>{{ playlist.title }}</h3>
-  <table id="pl-{{ playlist.id }}" class="playlist">
+  <table id="pl-{{ playlist.id }}">
    <thead>
     <tr>
+     <th>Date Added</th>
      <th>Title</th>
      <th>Id</th>
     </tr>
    </thead>
    <tbody>
     {% for video in playlist.videos %}
-     <tr><td>{{ video.title }}</td><td><a href="http://www.youtube.com/watch?v={{ video.id }}">Link</a></td></tr>
+     <tr>
+      <td>{{ video.date }}</td>
+      <td>{{ video.title }}</td>
+      <td><a href="http://www.youtube.com/watch?v={{ video.id }}">Link</a></td>
+     </tr>
     {% endfor %}
    </tbody>
   </table>

@@ -79,7 +79,7 @@ def get_playlists(youtube):
             for playlist_item in playlistitems_list_response["items"]:
                 playlist_data['videos'].append({
                     'title': playlist_item["snippet"]["title"],
-                    'ts': playlist_item['snippet']['publishedAt'],
+                    'date': playlist_item['snippet']['publishedAt'][:10],
                     'id': playlist_item["snippet"]["resourceId"]["videoId"]
                 })
 
